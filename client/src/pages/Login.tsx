@@ -40,6 +40,17 @@ export const Login = () => {
         navigate('/');
         return;
       }
+      
+      if (email === 'manager@manager.com' && password === 'manager123') {
+        login('dummy-token-manager', {
+          id: '2',
+          name: 'Manager User',
+          email: 'manager@manager.com',
+          role: 'Manager'
+        });
+        navigate('/');
+        return;
+      }
 
       const res = await axios.post('http://localhost:5000/api/auth/login', {
         email,
