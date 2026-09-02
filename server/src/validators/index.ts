@@ -77,7 +77,7 @@ export const serviceRequestSchema = z.object({
 // ── Job ───────────────────────────────────────────────────────────────────
 export const createJobSchema = z.object({
   serviceRequestId: z.string().min(1, 'Service Request ID is required'),
-  technicianId: z.string().min(1, 'Technician ID is required'),
+  technicianId: z.string().optional(),
 });
 
 export const updateJobStatusSchema = z.object({

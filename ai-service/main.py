@@ -23,9 +23,9 @@ def classify_request(request: ServiceRequest):
     text = request.description.lower()
     
     # Category and Priority Logic
-    if "ac" in text or "air conditioner" in text or "cooling" in text:
+    if "ac" in text or "air conditioner" in text or "cooling" in text or "refrigerator" in text or "freezer" in text:
         category = "HVAC"
-        priority = "High" if "not working" in text or "loud" in text else "Medium"
+        priority = "High" if "not working" in text or "loud" in text or "warm" in text or "spoil" in text else "Medium"
         tech_id = "TECH_HVAC_01"
     elif "generator" in text or "power" in text or "electricity" in text:
         category = "Electrical Maintenance"
